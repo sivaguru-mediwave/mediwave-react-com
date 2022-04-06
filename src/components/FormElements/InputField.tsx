@@ -1,67 +1,43 @@
 import React from 'react';
+import './input.css'
 
 type Props = {
     label?: string,
-    type: string,
-    placeholder: string,
-    name: string,
-    id: string,
-    value: string,
+    type: 'text' | 'email' | 'search' | 'url' | 'number',
+    placeholder?: string,
     disable?: boolean,
     readonly?: boolean,
-    errorMessage?: string,
-    autocomplete?:string,
-    autofocus?:boolean,
-    icon?:string,
-    iconPostion?:string,
+    backgroundColor?: string,
+    borderColor?: string,
+    borderRadius?: string,
+    size?: 'small' | 'medium' | 'large',
     handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 
 const InputField = (props: Props) => {
-    const {label, type, placeholder, name, id, value, disable, readonly, errorMessage, icon, iconPostion, autocomplete, autofocus, handleChange} = props;
-    
+    const {label, type, placeholder, disable, readonly ,backgroundColor,borderColor, borderRadius, size, handleChange} = props;
+    const background = {
+        backgroundColor: backgroundColor ? backgroundColor : 'none',
+        borderColor: borderColor ? borderColor : '#ddd',
+        borderRadius: borderRadius ? borderRadius : '0'
+    }
 
   return (
     <div className="form-group">
-          <label className='control-label'>{label}</label> 
+          <label className='control-label'>{label}</label>
           <div className='input-group'>
-            {/* Icon Postions Left */}
-            {
-                iconPostion === 'left' ? 
-                <div className='input-group-append left-icon'>
-                    <span className='input-group-text'>
-                        <i className={icon}></i>
-                    </span>
-                </div>
-                : ''
-            }
-            <input 
-                className='form-control' 
-                type={type} 
-                placeholder={placeholder}
-                name={name}
-                id={id}
-                value={value}
+            <input
+                style={background}
+                className={`form-control control-${size}`}
+                type={type}
                 disabled={disable}
                 readOnly={readonly}
-                autoFocus={autofocus}
-                autoComplete={autocomplete}
+                placeholder={placeholder}
                 onChange={handleChange}
             ></input>
-            {/* Icon Postions Right */}
-            {
-                iconPostion === 'right' ? 
-                <div className='input-group-append right-icon'>
-                    <span className='input-group-text'>
-                        <i className={icon}></i>
-                    </span>
-                </div>
-                : ''
-            }
             
           </div>
-          <div className='errorMessage'>{errorMessage}</div>
     </div>
   )
 };
