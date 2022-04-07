@@ -1,0 +1,33 @@
+.form-group .control-label{
+    display: block;
+    padding-bottom: 10px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #9b9b9b;
+}
+.form-group .input-group{
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+.input-group .textarea-form-control{
+  width: 100%;
+  height: inherit;
+  font-size: 16px;
+  padding: 15px;
+  border-radius: 0;
+  outline: none;
+  border: 1px solid #ddd;
+}
+.input-group .textarea-control-default{
+  font-size: 16px;
+}
+.input-group .textarea-control-small{
+  font-size: 14px;
+}
+.input-group .textarea-control-medium{
+  font-size: 22px;
+}
+.input-group .textarea-control-large{
+  font-size: 28px;
+}

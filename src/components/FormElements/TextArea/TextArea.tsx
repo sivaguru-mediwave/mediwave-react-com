@@ -1,46 +1,52 @@
 import React from 'react';
-import './input.css'
+import './text-area.css';
 
 type Props = {
     label?: string,
-    type: 'text' | 'email' | 'search' | 'url' | 'number',
     placeholder?: string,
+    id:string,
+    name: string,
     disable?: boolean,
     readonly?: boolean,
     backgroundColor?: string,
     borderColor?: string,
     borderRadius?: string,
     size?: 'default' | 'small' | 'medium' | 'large',
-    handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    rows: number,
+    fixedSize: boolean,
+    handleChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
-
-const InputField = (props: Props) => {
-    const {label, type, placeholder, disable, readonly ,backgroundColor,borderColor, borderRadius, size, handleChange} = props;
-    const style = {
+const TextArea = (props:Props) => {
+    const {label, placeholder,id, name, disable, readonly, backgroundColor, borderRadius,borderColor, size, rows, fixedSize, handleChange} = props;
+    const style:any = {
         backgroundColor: backgroundColor ? backgroundColor : 'none',
         borderColor: borderColor ? borderColor : '#ddd',
-        borderRadius: borderRadius ? borderRadius : '0'
+        borderRadius: borderRadius ? borderRadius : '0',
+        resize: fixedSize ? 'none' : 'vertical'
     }
-
   return (
+   <>
     <div className="form-group">
           <label className='control-label'>{label}</label>
           <div className='input-group'>
             
-            <input
+            <textarea
+                id={id}
+                name={name}
                 style={style}
-                className={`form-control control-${size}`}
-                type={type}
+                className={`textarea-form-control textarea-control-${size}`}
                 disabled={disable}
                 readOnly={readonly}
                 placeholder={placeholder}
+                rows={rows ? rows : 3}
                 onChange={handleChange}
-            ></input>
+            ></textarea>
             
           </div>
     </div>
+   </>
   )
-};
+}
 
-export default InputField;
+export default TextArea;

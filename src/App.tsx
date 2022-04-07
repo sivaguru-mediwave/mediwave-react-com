@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import InputField from './components/FormElements/InputField';
+import Button from './components/UI/Button/Button';
 // import PasswordField from './components/FormElements/PasswordField';
 
 type FormProps = {
@@ -28,6 +29,8 @@ function App() {
         <div className="form-area">
             {/* First Name */}
             <InputField type='text' label='First Name' handleChange={handleChange}/>
+            {/* Button */}
+            <Button type="button" label="Submit" variant='primary'/>
         </div>
 
       </div>

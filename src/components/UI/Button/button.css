@@ -1,0 +1,91 @@
+
+.button {
+    color: #FFFFFF;
+    font-size: 16px;
+    text-align: center;
+    outline: none;
+    border: none;
+    padding: 10px 30px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 500;
+    background: none;
+}
+.button-primary{
+    background: #248afd;
+}
+.button-primary:hover{
+    background: #0668d8;
+}
+.button-secondary{
+    background: #575757;
+}
+.button-secondary:hover{
+    background: #333232;
+}
+.button-outline{
+    background: none;
+    border: 1px solid #248afd;
+    color: #248afd;
+}
+.button-rounded{
+    background: #248afd;
+    border-radius: 50px;
+}
+.button-rounded:hover{
+    background: #0668d8;
+}
+.button-inverted{
+    color: #248afd;
+    background: none;
+}
+.button-inverted:hover{
+    background: #ebebeb;
+}
+.button-link{
+    background: none;
+    text-decoration: underline;
+    color: #248afd;
+}
+.button-full-width{
+    width: 100%;
+}
+.button i{
+    margin-right: 10px;
+}
+.button.button-primary[disabled]{
+    opacity: 0.7;
+    cursor:not-allowed;
+}
+.button.button-secondary[disabled]{
+    opacity: 0.7;
+    cursor:not-allowed;
+}
+.button.button-outline[disabled]{
+    opacity: 0.7;
+    cursor:not-allowed;
+}
+.button.button-rounded[disabled]{
+    opacity: 0.7;
+    cursor:not-allowed;
+}
+.button.button-inverted[disabled]{
+    opacity: 0.7;
+    cursor:not-allowed;
+}
+.button-default{
+    padding: 10px 30px;
+    font-size: 16px;
+}
+.button-small{
+    padding: 5px 20px;
+    font-size: 12px;
+}
+.button-medium{
+    padding: 14px 36px;
+    font-size: 18px;
+}
+.button-large{
+    padding: 18px 45px;
+    font-size: 20px;
+}

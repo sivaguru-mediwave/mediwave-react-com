@@ -21,9 +21,13 @@ body{
   outline: none;
   border: 1px solid #ddd;
 }
-.input-group .control-small{
+.input-group .control-default{
   height: 45px;
   font-size: 16px;
+}
+.input-group .control-small{
+  height: 40px;
+  font-size: 14px;
 }
 .input-group .control-medium{
   height: 55px;
