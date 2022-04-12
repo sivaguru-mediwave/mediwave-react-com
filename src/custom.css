@@ -1,0 +1,10 @@
+/* Root */
+
+:root {
+    /* Colors */
+    --primary: 262,57%,31%;
+
+    /* Font-families */
+    --base: "Raleway", sans-serif;
+
+}
