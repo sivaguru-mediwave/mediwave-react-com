@@ -1,4 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./components/UI/Button/button";
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;600;700&display=swap');
 body {
   margin: 0;
   background-image: url('./assets/images/bg-purple.jpg');
@@ -23,13 +29,13 @@ body {
   background: rgba(248,248,248,.9);
   border-bottom: 1px solid rgba(0,0,0,.1);
 }
-.header h2{
+/* .header h2{
   margin: 0;
   padding: 0;
   color: #232323;
   font-size: 24px;
   font-weight: 300;
-}
+} */
 .form-area{
   padding: 30px;
   box-sizing: border-box
