@@ -1,0 +1,122 @@
+
+
+:root {
+  --form-control-color: rebeccapurple;
+  --form-control-disabled: #959495;
+}
+
+.form-control {
+  font-size: 16px;
+  display: grid;
+  grid-template-columns: 1em auto;
+  gap: 15px;
+  outline: none;
+  align-items: center;
+}
+
+.form-control--disabled {
+  color: var(--form-control-disabled);
+  cursor: not-allowed;
+}
+
+input[type="checkbox"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  /* Remove most all native input styles */
+  appearance: none;
+  /* For iOS < 15 */
+  background-color: #f1f0f1;
+  /* Not removed via appearance */
+  margin: 0;
+  outline: none;
+  font: inherit;
+  color: currentColor;
+  width: 22px;
+  height: 22px;
+  border: 3px solid #7e7d7d;
+  border-radius: 2px;
+  transform: translateY(-0.075em);
+
+  display: grid;
+  place-content: center;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  transform-origin: bottom left;
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+  /* Windows High Contrast Mode */
+  background-color: CanvasText;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+
+input[type="checkbox"]:disabled {
+  cursor: not-allowed;
+}
+
+.form-control.checkbox-default{
+  color: #959495;
+}
+.form-control.checkbox-default input[type="checkbox"]{
+  background-color: #f1f0f1;
+  border: 3px solid #7e7d7d;
+}
+.form-control.checkbox-primary{
+  color: #248afd;
+}
+.form-control.checkbox-primary input[type="checkbox"]{
+  background-color: #f1f0f1;
+  border: 3px solid #248afd;
+}
+.form-control.checkbox-primary input[type="checkbox"]::before{
+  box-shadow: inset 1em 1em #248afd;
+}
+.form-control.checkbox-secondary{
+  color: #3f3f3f;
+}
+.form-control.checkbox-secondary input[type="checkbox"]{
+  background-color: #f1f0f1;
+  border: 3px solid #3f3f3f;
+}
+.form-control.checkbox-secondary input[type="checkbox"]::before{
+  box-shadow: inset 1em 1em #3f3f3f;
+}
+.size-default input[type="checkbox"]{
+  width: 22px;
+  height: 22px;
+}
+.size-small input[type="checkbox"]{
+  width: 18px;
+  height: 18px;
+}
+.size-medium input[type="checkbox"]{
+  width: 28px;
+  height: 28px;
+}
+.size-large input[type="checkbox"]{
+  width: 35px;
+  height: 35px;
+}
+.form-control.size-default{
+  font-size: 16px;
+}
+.form-control.size-small{
+  font-size: 14px;
+}
+.form-control.size-medium{
+  font-size: 20px;
+}
+.form-control.size-large{
+  font-size: 25px;
+}
+
+
